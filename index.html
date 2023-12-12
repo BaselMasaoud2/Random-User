@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">	
+        <div class="user-container"></div>	
+        <div class="quote-container"></div>	
+        <div class="content-container">	
+            <div class="pokemon-container"></div>	
+            <div class="meat-container"></div>	
+        </div>	
+        <div class="friends">	
+            <h4>Friends</h4>	
+            <div class="friends-container">	
+            </div>	
+        </div>	
+        <div class="buttons">	
+            <button>Display Random Data</button>	
+        </div>	
+    </div>
+    
+    <!-- TODO -->
+    <script id="user-template" type="text/x-handlebars-template">
+        <img src={{picture}} id="profile-pic">
+        <div class="user-info">
+            <h5>{{firstName}} {{lastName}}</h5>
+            <h5>{{city}}, {{state}}</h5>
+        </div>
+    </script>
+    <script id="pokemon-template" type="text/x-handlebars-template">
+        <img src=" {{imgUrl}}" id="pokemon-image">
+        <p id="pokemon-text">Fav Pokemon: {{name}}</p>
+    </script>
+    <script id="friends-template" type="text/x-handlebars-template">
+        <ul>
+            {{#each friends}}
+                <li> {{firstName}} {{lastName}}</li>
+            {{/each}}
+        </ul>
+    </script>
+
+    <script id="quote-template" type="text/x-handlebars-template">
+        <p>Fav quote:</p>
+        <q> {{text}} </q>
+    </script>
+    
+    <script id="baconIpsum-template" type="text/x-handlebars-template">
+        <h5>About me</h5>
+        <p class="meat-text">{{text}}</p>
+    </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  
+    <!-- MVC -->
+    <script src="api-manager.js"></script>
+    <script src="renderer.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
